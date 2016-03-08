@@ -2,12 +2,25 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}DuCoupTV{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <header>
+            <h1>DuCoupTV</h1>
+            <nav>
+                <td><a href="">Login</a> | <a href="">Sign up</a></td>
+                <td><a href="">Accueil</a></td>
+                <td><a href="">Mon Compte</a></td>
+                <td><a href="">Communauté</a></td>
+                <td><a href="">Classements</a></td>
+            </nav>
+            <input type="text" value="rechercher une série"></input>
+            <input type="submit" value="">
+        </header>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
+    
     </body>
 </html>
