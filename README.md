@@ -58,6 +58,15 @@ released under the MIT or BSD license.
 
 Enjoy!
 
+
+How to use it
+-------------
+
+Clone this repository
+Do "composer install" into the cloned folder
+Do "php app/console server:run"
+Go to http://127.0.0.1:8000
+
 [1]:  https://symfony.com/doc/2.8/book/installation.html
 [6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
 [7]:  https://symfony.com/doc/2.8/book/doctrine.html
