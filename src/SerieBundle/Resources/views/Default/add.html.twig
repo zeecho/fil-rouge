@@ -1,0 +1,14 @@
+{% extends "::base.html.twig" %}
+{% block title %} Ajouter une série{% endblock %}
+{% block body %}
+<form action="DefaultController.php" method="POST" accept-charset="utf-8">
+	Nom de la série:
+	<input type="text" name="nameSerie" id="name">
+	Résumé de la série:
+	<textarea name="summary" id="summary">Entrer le résumé</textarea>
+	Poster de la série:
+	<input type="file" name="poster" id="poster" >
+	<input type="submit" name="valid" value="Envoyer">
+		
+</form>
+{% endblock %}

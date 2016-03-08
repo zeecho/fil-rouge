@@ -1,0 +1,19 @@
+serie_list:
+    path: /list
+    defaults: { _controller: SerieBundle:Default:list}
+
+serie_add:
+    path: /add
+    defaults: { _controller: SerieBundle:Default:add}
+
+serie_delete:
+    path: /delete
+    defaults: { _controller: SerieBundle:Default:delete}
+
+serie_update:
+    path: /update
+    defaults: { _controller: SerieBundle:Default:update}
+
+serie_detail:
+    path: /detail
+    defaults: { _controller: SerieBundle:Default:detail}
