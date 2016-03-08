@@ -1,6 +1,5 @@
 serie:
-    resource: "@SerieBundle/Controller/"
-    type:     annotation
+    resource: "@SerieBundle/Resources/config/routing.yml"
     prefix:   /
 
 app:
