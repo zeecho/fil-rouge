@@ -3,6 +3,7 @@
 namespace SerieBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 /**
  * Rate
@@ -27,6 +28,25 @@ class Rate
      * @ORM\Column(name="value", type="integer")
      */
     private $value;
+
+    /**
+     * @var datetime
+     *
+     * @ORM\Column(name="publishedAt", type="datetime")
+     */
+    private $publishedAt;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Serie")
+     * @ORM\JoinColumn(name="serie_id", referencedColumnName="id")
+     */
+    private $serie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
 
     /**
      * Get id

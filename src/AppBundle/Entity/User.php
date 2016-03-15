@@ -22,6 +22,8 @@ class User extends BaseUser
 
     /**
      * @var Date
+     *
+     * @ORM\Column(name="birthDate", type="date")
      */
     private $birthDate;
 
