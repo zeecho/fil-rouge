@@ -51,11 +51,13 @@ class Serie
     private $seasons;
 
     /**
-     * @var Country
-     *
-     * @ORM\ManyToMany(targetEntity="Country")
+     * @ORM\ManyToMany(targetEntity="Genre")
+     * @ORM\JoinTable(name="series_genres",
+     *      joinColumns={@ORM\JoinColumn(name="serie_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="genre_id", referencedColumnName="id")}
+     *      )
      */
-    private $countries;
+    private $genres;
 
     /**
      * Get id

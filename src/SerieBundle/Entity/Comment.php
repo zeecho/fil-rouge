@@ -23,7 +23,7 @@ class Comment extends BaseComment
      * Thread of this comment
      *
      * @var Thread
-     * @ORM\ManyToOne(targetEntity="MyProject\MyBundle\Entity\Thread")
+     * @ORM\ManyToOne(targetEntity="SerieBundle\Entity\Thread")
      */
     protected $thread;
 }
