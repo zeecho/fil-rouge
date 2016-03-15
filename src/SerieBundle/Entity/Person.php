@@ -46,6 +46,12 @@ class Person
     private $seriesDirected;
 
     /**
+     * @ORM\ManyToMany(targetEntity="Episode", inversedBy="guests")
+     * @ORM\JoinTable(name="episodes_guests")
+     */
+    private $appearances;
+
+    /**
      * Get id
      *
      * @return integer 

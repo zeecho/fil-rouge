@@ -64,6 +64,10 @@ class Episode
      */
     private $season;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Person", mappedBy="appearances")
+     */
+    private $guests;
 
     /**
      * Get id

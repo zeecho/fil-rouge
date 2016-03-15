@@ -5,6 +5,7 @@ namespace AppBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * @ORM\Entity
@@ -18,6 +19,40 @@ class User extends BaseUser
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;
+
+    /**
+     * @var Date
+     */
+    private $birthDate;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Serie", inversedBy="users")
+     * @ORM\JoinTable(name="users_favorites")
+     */
+    private $favorites;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="myFriends")
+     */
+    private $friendsWithMe;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="User", inversedBy="friendsWithMe")
+     * @ORM\JoinTable(name="friends",
+     *      joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@JoinColumn(name="friend_user_id", referencedColumnName="id")}
+     *      )
+     */
+    private $myFriends;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Episode")
+     * @ORM\JoinTable(name="users_episodes",
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="episode_id", referencedColumnName="id")}
+     *      )
+     */
+    private $episodes;
 
     public function __construct()
     {

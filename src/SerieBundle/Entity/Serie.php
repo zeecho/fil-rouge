@@ -87,6 +87,11 @@ class Serie
     private $directors;
 
     /**
+     * @ORM\ManyToMany(targetEntity="User", mappedBy="favorites")
+     */
+    private $users;
+
+    /**
      * Get id
      *
      * @return integer 
