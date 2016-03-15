@@ -189,27 +189,4 @@ class Episode
     {
         return $this->airedDate;
     }
-
-    /**
-     * Set season
-     *
-     * @param \SerieBundle\Entity\Season $season
-     * @return Episode
-     */
-    public function setSeason(\SerieBundle\Entity\Season $season)
-    {
-        $this->season = $season;
-
-        return $this;
-    }
-
-    /**
-     * Get season
-     *
-     * @return \SerieBundle\Entity\Season 
-     */
-    public function getSeason()
-    {
-        return $this->season;
-    }
 }
