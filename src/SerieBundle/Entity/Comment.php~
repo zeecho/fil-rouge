@@ -23,8 +23,20 @@ class Comment extends BaseComment
      * Thread of this comment
      *
      * @var Thread
-     * @ORM\ManyToOne(targetEntity="MyProject\MyBundle\Entity\Thread")
+     * @ORM\ManyToOne(targetEntity="SerieBundle\Entity\Thread")
      */
     protected $thread;
-}
 
+    // Not sure about $serie and $user
+    /**
+     * @ORM\ManyToOne(targetEntity="Serie")
+     * @ORM\JoinColumn(name="serie_id", referencedColumnName="id")
+     */
+    private $serie;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     */
+    private $user;
+}

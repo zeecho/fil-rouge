@@ -216,4 +216,44 @@ class Episode
     {
         return $this->season;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->guests = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add guests
+     *
+     * @param \SerieBundle\Entity\Person $guests
+     * @return Episode
+     */
+    public function addGuest(\SerieBundle\Entity\Person $guests)
+    {
+        $this->guests[] = $guests;
+
+        return $this;
+    }
+
+    /**
+     * Remove guests
+     *
+     * @param \SerieBundle\Entity\Person $guests
+     */
+    public function removeGuest(\SerieBundle\Entity\Person $guests)
+    {
+        $this->guests->removeElement($guests);
+    }
+
+    /**
+     * Get guests
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getGuests()
+    {
+        return $this->guests;
+    }
 }

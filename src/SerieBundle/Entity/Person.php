@@ -106,4 +106,112 @@ class Person
     {
         return $this->firstName;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->seriesIn = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->seriesDirected = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->appearances = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add seriesIn
+     *
+     * @param \SerieBundle\Entity\Serie $seriesIn
+     * @return Person
+     */
+    public function addSeriesIn(\SerieBundle\Entity\Serie $seriesIn)
+    {
+        $this->seriesIn[] = $seriesIn;
+
+        return $this;
+    }
+
+    /**
+     * Remove seriesIn
+     *
+     * @param \SerieBundle\Entity\Serie $seriesIn
+     */
+    public function removeSeriesIn(\SerieBundle\Entity\Serie $seriesIn)
+    {
+        $this->seriesIn->removeElement($seriesIn);
+    }
+
+    /**
+     * Get seriesIn
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeriesIn()
+    {
+        return $this->seriesIn;
+    }
+
+    /**
+     * Add seriesDirected
+     *
+     * @param \SerieBundle\Entity\Serie $seriesDirected
+     * @return Person
+     */
+    public function addSeriesDirected(\SerieBundle\Entity\Serie $seriesDirected)
+    {
+        $this->seriesDirected[] = $seriesDirected;
+
+        return $this;
+    }
+
+    /**
+     * Remove seriesDirected
+     *
+     * @param \SerieBundle\Entity\Serie $seriesDirected
+     */
+    public function removeSeriesDirected(\SerieBundle\Entity\Serie $seriesDirected)
+    {
+        $this->seriesDirected->removeElement($seriesDirected);
+    }
+
+    /**
+     * Get seriesDirected
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeriesDirected()
+    {
+        return $this->seriesDirected;
+    }
+
+    /**
+     * Add appearances
+     *
+     * @param \SerieBundle\Entity\Episode $appearances
+     * @return Person
+     */
+    public function addAppearance(\SerieBundle\Entity\Episode $appearances)
+    {
+        $this->appearances[] = $appearances;
+
+        return $this;
+    }
+
+    /**
+     * Remove appearances
+     *
+     * @param \SerieBundle\Entity\Episode $appearances
+     */
+    public function removeAppearance(\SerieBundle\Entity\Episode $appearances)
+    {
+        $this->appearances->removeElement($appearances);
+    }
+
+    /**
+     * Get appearances
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getAppearances()
+    {
+        return $this->appearances;
+    }
 }
