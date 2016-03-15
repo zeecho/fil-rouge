@@ -169,4 +169,78 @@ class Serie
     {
         return $this->releaseDate;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->seasons = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->countries = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add seasons
+     *
+     * @param \SerieBundle\Entity\Season $seasons
+     * @return Serie
+     */
+    public function addSeason(\SerieBundle\Entity\Season $seasons)
+    {
+        $this->seasons[] = $seasons;
+
+        return $this;
+    }
+
+    /**
+     * Remove seasons
+     *
+     * @param \SerieBundle\Entity\Season $seasons
+     */
+    public function removeSeason(\SerieBundle\Entity\Season $seasons)
+    {
+        $this->seasons->removeElement($seasons);
+    }
+
+    /**
+     * Get seasons
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getSeasons()
+    {
+        return $this->seasons;
+    }
+
+    /**
+     * Add countries
+     *
+     * @param \SerieBundle\Entity\Country $countries
+     * @return Serie
+     */
+    public function addCountry(\SerieBundle\Entity\Country $countries)
+    {
+        $this->countries[] = $countries;
+
+        return $this;
+    }
+
+    /**
+     * Remove countries
+     *
+     * @param \SerieBundle\Entity\Country $countries
+     */
+    public function removeCountry(\SerieBundle\Entity\Country $countries)
+    {
+        $this->countries->removeElement($countries);
+    }
+
+    /**
+     * Get countries
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCountries()
+    {
+        return $this->countries;
+    }
 }
