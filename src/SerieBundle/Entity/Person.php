@@ -35,6 +35,15 @@ class Person
      */
     private $firstName;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Serie", mappedBy="casting")
+     */
+    private $seriesIn;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Serie", mappedBy="directors")
+     */
+    private $seriesDirected;
 
     /**
      * Get id
