@@ -87,7 +87,7 @@ class Serie
     private $directors;
 
     /**
-     * @ORM\ManyToMany(targetEntity="User", mappedBy="favorites")
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User", mappedBy="favorites")
      */
     private $users;
 

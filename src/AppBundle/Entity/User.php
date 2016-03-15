@@ -26,7 +26,7 @@ class User extends BaseUser
     private $birthDate;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Serie", inversedBy="users")
+     * @ORM\ManyToMany(targetEntity="SerieBundle\Entity\Serie", inversedBy="users")
      * @ORM\JoinTable(name="users_favorites")
      */
     private $favorites;
@@ -39,14 +39,14 @@ class User extends BaseUser
     /**
      * @ORM\ManyToMany(targetEntity="User", inversedBy="friendsWithMe")
      * @ORM\JoinTable(name="friends",
-     *      joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
-     *      inverseJoinColumns={@JoinColumn(name="friend_user_id", referencedColumnName="id")}
+     *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="friend_user_id", referencedColumnName="id")}
      *      )
      */
     private $myFriends;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Episode")
+     * @ORM\ManyToMany(targetEntity="SerieBundle\Entity\Episode")
      * @ORM\JoinTable(name="users_episodes",
      *      joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="episode_id", referencedColumnName="id")}
