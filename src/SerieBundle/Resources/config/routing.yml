@@ -23,3 +23,6 @@ serie_update:
 serie_detail:
     path: /detail
     defaults: { _controller: SerieBundle:Default:detail}
+serie_form:
+    path: /formSerie
+    defaults: { _controller: SerieBundle:Default:formSerie}
