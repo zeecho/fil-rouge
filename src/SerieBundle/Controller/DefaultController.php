@@ -91,9 +91,11 @@ class DefaultController extends Controller
     public function detailAction($id)
     {
         $serie = $this->getDoctrine()
-        ->getRepository('AppBundle:serie')
+        ->getRepository('SerieBundle:Serie')
         ->find($id);
-        return $this->render('SerieBundle:Default:detail.html.twig');
+        return $this->render('SerieBundle:Default:detail.html.twig', [
+                'serie' => $serie
+            ]);
     }
 }
 
