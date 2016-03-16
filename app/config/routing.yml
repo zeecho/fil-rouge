@@ -1,3 +1,11 @@
+serie_genre:
+    resource: "@SerieBundle/Controller/GenreController.php"
+    type:     annotation
+
+serie_person:
+    resource: "@SerieBundle/Controller/PersonController.php"
+    type:     annotation
+
 serie_language:
     resource: "@SerieBundle/Controller/LanguageController.php"
     type:     annotation

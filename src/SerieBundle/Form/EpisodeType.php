@@ -2,6 +2,7 @@
 
 namespace SerieBundle\Form;
 
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -20,7 +21,15 @@ class EpisodeType extends AbstractType
             ->add('runtime', 'time')
             ->add('number')
             ->add('airedDate')
-            ->add('season')
+            ->add('season', EntityType::class, [
+                'class' => 'SerieBundle:Season',
+                'choice_label' => function($season) {
+                    $name = $season->getSerie()->getName();
+                    $num = $season->getNumber();
+                    $string = $name . ' (Saison ' . $num . ')';
+                    return $string;
+                }
+            ])
             ->add('guests')
         ;
     }
