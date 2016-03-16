@@ -37,6 +37,13 @@ class Serie
     private $summary;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="poster", type="string", nullable=true)
+     */
+    private $poster;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="releaseDate", type="date", nullable=true)
@@ -242,5 +249,160 @@ class Serie
     public function getCountries()
     {
         return $this->countries;
+    }
+
+    /**
+     * Add genres
+     *
+     * @param \SerieBundle\Entity\Genre $genres
+     * @return Serie
+     */
+    public function addGenre(\SerieBundle\Entity\Genre $genres)
+    {
+        $this->genres[] = $genres;
+
+        return $this;
+    }
+
+    /**
+     * Remove genres
+     *
+     * @param \SerieBundle\Entity\Genre $genres
+     */
+    public function removeGenre(\SerieBundle\Entity\Genre $genres)
+    {
+        $this->genres->removeElement($genres);
+    }
+
+    /**
+     * Get genres
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getGenres()
+    {
+        return $this->genres;
+    }
+
+    /**
+     * Set language
+     *
+     * @param \SerieBundle\Entity\Language $language
+     * @return Serie
+     */
+    public function setLanguage(\SerieBundle\Entity\Language $language = null)
+    {
+        $this->language = $language;
+
+        return $this;
+    }
+
+    /**
+     * Get language
+     *
+     * @return \SerieBundle\Entity\Language 
+     */
+    public function getLanguage()
+    {
+        return $this->language;
+    }
+
+    /**
+     * Add casting
+     *
+     * @param \SerieBundle\Entity\Person $casting
+     * @return Serie
+     */
+    public function addCasting(\SerieBundle\Entity\Person $casting)
+    {
+        $this->casting[] = $casting;
+
+        return $this;
+    }
+
+    /**
+     * Remove casting
+     *
+     * @param \SerieBundle\Entity\Person $casting
+     */
+    public function removeCasting(\SerieBundle\Entity\Person $casting)
+    {
+        $this->casting->removeElement($casting);
+    }
+
+    /**
+     * Get casting
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getCasting()
+    {
+        return $this->casting;
+    }
+
+    /**
+     * Add directors
+     *
+     * @param \SerieBundle\Entity\Person $directors
+     * @return Serie
+     */
+    public function addDirector(\SerieBundle\Entity\Person $directors)
+    {
+        $this->directors[] = $directors;
+
+        return $this;
+    }
+
+    /**
+     * Remove directors
+     *
+     * @param \SerieBundle\Entity\Person $directors
+     */
+    public function removeDirector(\SerieBundle\Entity\Person $directors)
+    {
+        $this->directors->removeElement($directors);
+    }
+
+    /**
+     * Get directors
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getDirectors()
+    {
+        return $this->directors;
+    }
+
+    /**
+     * Add users
+     *
+     * @param \AppBundle\Entity\User $users
+     * @return Serie
+     */
+    public function addUser(\AppBundle\Entity\User $users)
+    {
+        $this->users[] = $users;
+
+        return $this;
+    }
+
+    /**
+     * Remove users
+     *
+     * @param \AppBundle\Entity\User $users
+     */
+    public function removeUser(\AppBundle\Entity\User $users)
+    {
+        $this->users->removeElement($users);
+    }
+
+    /**
+     * Get users
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUsers()
+    {
+        return $this->users;
     }
 }
