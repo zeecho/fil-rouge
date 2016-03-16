@@ -405,4 +405,27 @@ class Serie
     {
         return $this->users;
     }
+
+    /**
+     * Set poster
+     *
+     * @param string $poster
+     * @return Serie
+     */
+    public function setPoster($poster)
+    {
+        $this->poster = $poster;
+
+        return $this;
+    }
+
+    /**
+     * Get poster
+     *
+     * @return string 
+     */
+    public function getPoster()
+    {
+        return $this->poster;
+    }
 }

@@ -1,3 +1,32 @@
+serie_language:
+    resource: "@SerieBundle/Controller/LanguageController.php"
+    type:     annotation
+
+serie_country:
+    resource: "@SerieBundle/Controller/CountryController.php"
+    type:     annotation
+
+serie_serie:
+    resource: "@SerieBundle/Controller/SerieController.php"
+    type:     annotation
+
+serie_serie:
+    resource: "@SerieBundle/Controller/SerieController.php"
+    type:     annotation
+
+serie_season:
+    resource: "@SerieBundle/Controller/SeasonController.php"
+    type:     annotation
+
+serie_episode:
+    resource: "@SerieBundle/Controller/EpisodeController.php"
+    type:     annotation
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 serie:
     resource: "@SerieBundle/Resources/config/routing.yml"
     prefix:   /

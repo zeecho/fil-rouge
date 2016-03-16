@@ -2,12 +2,11 @@
 
 namespace SerieBundle\Form;
 
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class SerieType extends AbstractType
+class CountryType extends AbstractType
 {
     /**
      * @param FormBuilderInterface $builder
@@ -17,15 +16,6 @@ class SerieType extends AbstractType
     {
         $builder
             ->add('name')
-            ->add('summary')
-            ->add('poster')
-            ->add('releaseDate', 'date')
-            ->add('genres')
-            ->add('countries', EntityType::class, ['class' => 'SerieBundle:Country', 'choice_label' => 'name'])
-            ->add('language', EntityType::class, ['class' => 'SerieBundle:Language', 'choice_label' => 'name'])
-            ->add('casting')
-            ->add('directors')
-            ->add('users')
         ;
     }
     
@@ -35,7 +25,7 @@ class SerieType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'SerieBundle\Entity\Serie'
+            'data_class' => 'SerieBundle\Entity\Country'
         ));
     }
 }

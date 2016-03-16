@@ -2,6 +2,8 @@
 
 namespace SerieBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Constraints as Assert;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -29,12 +31,14 @@ class Season
     private $number;
 
     /**
-     * @var
+     * @var Serie
      *
      * @ORM\ManyToOne(targetEntity="Serie", inversedBy="seasons")
      * @ORM\JoinColumn(nullable=false)
+     * @Assert\Type(type="SerieBundle\Entity\Serie")
+     * @Assert\Valid()
      */
-    private $serie;
+    protected $serie;
 
     /**
      * @var ArrayCollection
