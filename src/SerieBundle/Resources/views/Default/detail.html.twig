@@ -4,6 +4,10 @@
 <h1>Détail de la  série</h1>
 <p>Name : {{ serie.name }}</p>
 <p>Summary : {{ serie.summary }}</p>
-<p>ReleaseDate : {{ serie.releaseDate }}</p>
-<p>Country : {{ serie.countries }}</p>
+<p>ReleaseDate : {{ serie.releaseDate|date("d/m/Y") }}</p>
+    <p>Countries :
+    {% for country in serie.countries %}
+        country
+    {% endfor %}
+    </p>
 {% endblock %}
