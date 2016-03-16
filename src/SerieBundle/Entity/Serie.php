@@ -37,6 +37,13 @@ class Serie
     private $summary;
 
     /**
+     * @var string
+     *
+     * @ORM\Column(name="poster", type="string", nullable=true)
+     */
+    private $poster;
+
+    /**
      * @var \DateTime
      *
      * @ORM\Column(name="releaseDate", type="date", nullable=true)
