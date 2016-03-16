@@ -3,6 +3,8 @@
 {% block body %}
 <h1>Liste des séries</h1>
     {% for serie in series %}
-        <p><a href={{ path('detail', {id: serie.id}) }}>{{ serie.name }}</a></p>
+        <p><a href={{ path('serie_detail', {id: serie.id}) }}>{{ serie.name }}</a>
+            <a href="{{ path('serie_delete', {id: serie.id}) }}">X</a>
+        </p>
     {% endfor %}
 {% endblock %}
