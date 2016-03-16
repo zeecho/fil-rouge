@@ -13,15 +13,15 @@ serie_add:
     defaults: { _controller: SerieBundle:Default:add}
 
 serie_delete:
-    path: /delete
+    path: /delete/{id}
     defaults: { _controller: SerieBundle:Default:delete}
 
 serie_update:
-    path: /update
+    path: /update/{id}
     defaults: { _controller: SerieBundle:Default:update}
 
 serie_detail:
-    path: /detail
+    path: /detail/{id}
     defaults: { _controller: SerieBundle:Default:detail}
 serie_form:
     path: /formSerie

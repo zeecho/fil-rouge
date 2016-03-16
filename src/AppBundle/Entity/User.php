@@ -22,6 +22,8 @@ class User extends BaseUser
 
     /**
      * @var Date
+     *
+     * @ORM\Column(name="birthDate", type="date")
      */
     private $birthDate;
 
@@ -58,5 +60,160 @@ class User extends BaseUser
     {
         parent::__construct();
         // your own logic
+    }
+
+    /**
+     * Set birthDate
+     *
+     * @param \DateTime $birthDate
+     * @return User
+     */
+    public function setBirthDate($birthDate)
+    {
+        $this->birthDate = $birthDate;
+
+        return $this;
+    }
+
+    /**
+     * Get birthDate
+     *
+     * @return \DateTime 
+     */
+    public function getBirthDate()
+    {
+        return $this->birthDate;
+    }
+
+    /**
+     * Add favorites
+     *
+     * @param \SerieBundle\Entity\Serie $favorites
+     * @return User
+     */
+    public function addFavorite(\SerieBundle\Entity\Serie $favorites)
+    {
+        $this->favorites[] = $favorites;
+
+        return $this;
+    }
+
+    /**
+     * Remove favorites
+     *
+     * @param \SerieBundle\Entity\Serie $favorites
+     */
+    public function removeFavorite(\SerieBundle\Entity\Serie $favorites)
+    {
+        $this->favorites->removeElement($favorites);
+    }
+
+    /**
+     * Get favorites
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFavorites()
+    {
+        return $this->favorites;
+    }
+
+    /**
+     * Add friendsWithMe
+     *
+     * @param \AppBundle\Entity\User $friendsWithMe
+     * @return User
+     */
+    public function addFriendsWithMe(\AppBundle\Entity\User $friendsWithMe)
+    {
+        $this->friendsWithMe[] = $friendsWithMe;
+
+        return $this;
+    }
+
+    /**
+     * Remove friendsWithMe
+     *
+     * @param \AppBundle\Entity\User $friendsWithMe
+     */
+    public function removeFriendsWithMe(\AppBundle\Entity\User $friendsWithMe)
+    {
+        $this->friendsWithMe->removeElement($friendsWithMe);
+    }
+
+    /**
+     * Get friendsWithMe
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getFriendsWithMe()
+    {
+        return $this->friendsWithMe;
+    }
+
+    /**
+     * Add myFriends
+     *
+     * @param \AppBundle\Entity\User $myFriends
+     * @return User
+     */
+    public function addMyFriend(\AppBundle\Entity\User $myFriends)
+    {
+        $this->myFriends[] = $myFriends;
+
+        return $this;
+    }
+
+    /**
+     * Remove myFriends
+     *
+     * @param \AppBundle\Entity\User $myFriends
+     */
+    public function removeMyFriend(\AppBundle\Entity\User $myFriends)
+    {
+        $this->myFriends->removeElement($myFriends);
+    }
+
+    /**
+     * Get myFriends
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getMyFriends()
+    {
+        return $this->myFriends;
+    }
+
+    /**
+     * Add episodes
+     *
+     * @param \SerieBundle\Entity\Episode $episodes
+     * @return User
+     */
+    public function addEpisode(\SerieBundle\Entity\Episode $episodes)
+    {
+        $this->episodes[] = $episodes;
+
+        return $this;
+    }
+
+    /**
+     * Remove episodes
+     *
+     * @param \SerieBundle\Entity\Episode $episodes
+     */
+    public function removeEpisode(\SerieBundle\Entity\Episode $episodes)
+    {
+        $this->episodes->removeElement($episodes);
+    }
+
+    /**
+     * Get episodes
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getEpisodes()
+    {
+        return $this->episodes;
     }
 }

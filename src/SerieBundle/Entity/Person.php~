@@ -35,6 +35,21 @@ class Person
      */
     private $firstName;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Serie", mappedBy="casting")
+     */
+    private $seriesIn;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Serie", mappedBy="directors")
+     */
+    private $seriesDirected;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Episode", inversedBy="guests")
+     * @ORM\JoinTable(name="episodes_guests")
+     */
+    private $appearances;
 
     /**
      * Get id
