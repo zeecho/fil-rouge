@@ -5,6 +5,7 @@ namespace SerieBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class SerieType extends AbstractType
 {
@@ -19,6 +20,7 @@ class SerieType extends AbstractType
             ->add('summary')
             ->add('releaseDate', 'date')
             ->add('countries')
+            ->add('Valider',SubmitType::class)
         ;
     }
     
