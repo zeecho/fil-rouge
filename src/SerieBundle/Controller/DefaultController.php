@@ -18,10 +18,12 @@ class DefaultController extends Controller
 
     public function listAction()
     {
-        $serie = $this->getDoctrine()
+        $series = $this->getDoctrine()
         ->getRepository('SerieBundle:Serie')
         ->findAll();
-        return $this->render('SerieBundle:Default:list.html.twig');
+        return $this->render('SerieBundle:Default:list.html.twig', [
+            'series' => $series
+        ]);
     }
 
     public function addAction(Request $req)

@@ -2,4 +2,7 @@
 {% block title %} Liste des séries{% endblock %}
 {% block body %}
 <h1>Liste des séries</h1>
+    {% for serie in series %}
+        <p><a href={{ path('detail', {id: serie.id}) }}>{{ serie.name }}</a></p>
+    {% endfor %}
 {% endblock %}
