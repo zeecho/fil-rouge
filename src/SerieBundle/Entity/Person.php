@@ -106,6 +106,27 @@ class Person
     {
         return $this->firstName;
     }
+
+    /**
+     * Get full name (lastname + firstname)
+     *
+     * @return string
+     */
+    public function getLastAndFirstName()
+    {
+        return $this->lastName . ' ' . $this->firstName;
+    }
+
+    /**
+     * Get full name (firstname + lastname)
+     *
+     * @return string
+     */
+    public function getFirstAndLastName()
+    {
+        return $this->firstName . ' ' . $this->lastName;
+    }
+
     /**
      * Constructor
      */

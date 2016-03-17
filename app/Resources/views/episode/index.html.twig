@@ -23,7 +23,7 @@
                 <td>{{ episode.synopsis }}</td>
                 <td>{% if episode.runtime %}{{ episode.runtime|date('H:i:s') }}{% endif %}</td>
                 <td>{{ episode.number }}</td>
-                <td>{{ episode.airedDate }}</td>
+                <td>{{ episode.airedDate|date('d-m-Y') }}</td>
                 <td>
                     <ul>
                         <li>
