@@ -20,15 +20,27 @@ class SerieType extends AbstractType
             ->add('summary')
             ->add('poster')
             ->add('releaseDate', 'date')
-            ->add('genres')
+            ->add('genres', EntityType::class, [
+                'class' => 'SerieBundle:Genre',
+                'choice_label' => 'name',
+                'multiple' => true
+            ])
             ->add('countries', EntityType::class, [
                 'class' => 'SerieBundle:Country',
                 'choice_label' => 'name',
                 'multiple' => true
             ])
             ->add('language', EntityType::class, ['class' => 'SerieBundle:Language', 'choice_label' => 'name'])
-            ->add('casting')
-            ->add('directors')
+            ->add('casting', EntityType::class, [
+                'class' => 'SerieBundle:Person',
+                'choice_label' => 'lastAndFirstName',
+                'multiple' => true
+            ])
+            ->add('directors', EntityType::class, [
+                'class' => 'SerieBundle:Person',
+                'choice_label' => 'lastAndFirstName',
+                'multiple' => true
+            ])
         ;
     }
     
