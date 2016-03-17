@@ -22,12 +22,20 @@
                 <td>{% if episode.runtime %}{{ episode.runtime|date('H:i:s') }}{% endif %}</td>
             </tr>
             <tr>
+                <th>Serie</th>
+                <td>{{ episode.season.serie.name }}</td>
+            </tr>
+            <tr>
+                <th>Season</th>
+                <td>{{ episode.season.number }}</td>
+            </tr>
+            <tr>
                 <th>Number</th>
                 <td>{{ episode.number }}</td>
             </tr>
             <tr>
                 <th>Aireddate</th>
-                <td>{{ episode.airedDate }}</td>
+                <td>{{ episode.airedDate|date('d-m-Y') }}</td>
             </tr>
         </tbody>
     </table>
