@@ -33,7 +33,8 @@ class EpisodeType extends AbstractType
             ->add('guests', EntityType::class, [
                 'class' => 'SerieBundle:Person',
                 'choice_label' => 'lastAndFirstName',
-                'multiple' => true
+                'multiple' => true,
+                'required' => false
             ])
         ;
     }
