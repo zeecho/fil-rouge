@@ -13,12 +13,6 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $series = $em->getRepository('SerieBundle:Serie')->findAll();
-
-        return $this->render('serie/index.html.twig', array(
-            'series' => $series,
-        ));
+        return $this->forward('SerieBundle:Serie:index');
     }
 }
