@@ -24,6 +24,10 @@ class SerieController extends Controller
      */
     public function indexAction()
     {
+        $em = $this->getDoctrine()->getManager();
+
+        $series = $em->getRepository('SerieBundle:Serie')->findAll();
+
         return $this->render('serie/index.html.twig', array(
             'series' => $series,
         ));
