@@ -29,20 +29,35 @@
     </head>
     <body>
         <header>
-            <h1>DukooTV</h1>
-            <nav>
-                <td><a href="/login">Se connecter</a></td>
-                <td><a href="/register">S'enregistrer</a></td>
-                <td><a href="/">Accueil</a></td>
-                <td><a href="/community">Communauté</a></td>
-                <td><a href="/ranking">Classements</a></td>
-                <td><a href="">Mon Compte</a></td>
-            </nav>
-            <input type="text" value="rechercher une série"></input>
+            <div class="container">
+                <div class="jumbotron">
+                    <h1>DukooTV</h1>
+                </div>  
+                <div class="row">
+                    <nav>
+                        <div class="col-sm-4">
+                            <td><a href="/login">Se connecter</a></td>
+                            <td><a href="/register">S'enregistrer</a></td>
+                        </div>
+                        <div class="col-sm-4">
+                            <td><a href="/">Accueil</a></td>
+                            <td><a href="/community">Communauté</a></td>
+                            <td><a href="/ranking">Classements</a></td>
+                            <td><a href="/account">Mon Compte</a></td>
+                        </div> 
+                    </nav>
+                </div>
+            </div>
+        <div class="container">
+            <input type="text" placeholder="rechercher une série"></input>
             <input type="submit" value="">
+        </div>
         </header>
-        {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    
+        <div class="container">
+            <div class="jumbotron">
+                {% block body %}{% endblock %}
+                {% block javascripts %}{% endblock %}
+            </div>
+        </div>
     </body>
 </html>
