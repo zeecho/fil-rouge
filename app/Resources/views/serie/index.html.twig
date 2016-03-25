@@ -6,29 +6,23 @@
     <table>
         <thead>
             <tr>
-                <th>Id</th>
                 <th>Name</th>
-                <th>Summary</th>
                 <th>Poster</th>
-                <th>Releasedate</th>
                 <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         {% for serie in series %}
             <tr>
-                <td><a href="{{ path('serie_show', { 'id': serie.id }) }}">{{ serie.id }}</a></td>
                 <td>{{ serie.name }}</td>
-                <td>{{ serie.summary }}</td>
                 <td>{{ serie.poster }}</td>
-                <td>{% if serie.releaseDate %}{{ serie.releaseDate|date('Y-m-d') }}{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('serie_show', { 'id': serie.id }) }}">show</a>
+                            <a href="{{ path('serie_show', { 'id': serie.id }) }}">voir</a>
                         </li>
                         <li>
-                            <a href="{{ path('serie_edit', { 'id': serie.id }) }}">edit</a>
+                            <a href="{{ path('serie_edit', { 'id': serie.id }) }}">éditer</a>
                         </li>
                     </ul>
                 </td>
@@ -39,7 +33,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('serie_new') }}">Create a new entry</a>
+            <a href="{{ path('serie_new') }}">Créer une nouvelle série</a>
         </li>
     </ul>
 {% endblock %}
