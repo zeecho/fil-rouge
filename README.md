@@ -9,6 +9,8 @@
 composer install
 php app/console doctrine:database:create
 php app/console doctrine:schema:update --force
+# Only if you want to use fixtures !
+php app/console doctrine:fixtures:load
 php app/console server:run
 ```
 

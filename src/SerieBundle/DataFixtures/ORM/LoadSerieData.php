@@ -14,12 +14,13 @@ class LoadUserData implements FixtureInterface
 {
     public function load(ObjectManager $manager)
     {
-        for($i=0; $i<20; $i++) {
+		$series = ["Breaking Bad", "Game of Thrones", "Utopia", "Friends", "Dallas", "Chips", "Doctor Who", "K2000", "L'agence tout-risque", "Mac Giver", "Supercopter"];
+        for($i=0; $i<count($series); $i++) {
             $lang = new Language();
-            $lang->setName('Language' . $i);
+            $lang->setName("English");
 
             $serie = new Serie();
-            $serie->setName('Serie' . $i);
+            $serie->setName($series[$i]);
             $serie->setLanguage($lang);
             $serie->setSummary('asrnuiernausietnurasetanusriet auisrnet usrne utnsreta aut esrnt ' . $i);
 
