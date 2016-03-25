@@ -35,9 +35,9 @@ class LoadUserData implements FixtureInterface
             $isInDb = false;
 
             for ($z=0; $z < count($languages); $z++) { 
-              if ($series[$i][1] = $languages[$z]->getName()) {
-                $isInDb = true;
-                $lang = $languages[$z];
+              if ($series[$i][1] === $languages[$z]->getName()) {
+                    $isInDb = true;
+                    $lang = $languages[$z];
                 break;
                }
             }
@@ -47,13 +47,14 @@ class LoadUserData implements FixtureInterface
                 $lang->setName($series[$i][1]);
             }
 
+            dump($lang);
+            $manager->persist($lang);
+
             $serie = new Serie();
             $serie->setName($series[$i][0]);
             $serie->setLanguage($lang);
             $serie->setSummary($series[$i][2]);
 
-
-            $manager->persist($lang);
             $manager->persist($serie);
 
             for($j=1; $j <= $series[$i][3]; $j++) {

@@ -25,6 +25,10 @@
                 <th>Releasedate</th>
                 <td>{% if serie.releaseDate %}{{ serie.releaseDate|date('Y-m-d') }}{% endif %}</td>
             </tr>
+            <tr>
+                <th>Language</th>
+                <td>{{ serie.language.name }}</td>
+            </tr>
         <tr>
             <th></th>
         </tr>
