@@ -21,22 +21,22 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @var Date
+     * @var date
      *
      * @ORM\Column(name="birthDate", type="date")
      */
-    private $birthDate;
+    protected $birthDate;
 
     /**
      * @ORM\ManyToMany(targetEntity="SerieBundle\Entity\Serie", inversedBy="users")
      * @ORM\JoinTable(name="users_favorites")
      */
-    private $favorites;
+    protected $favorites;
 
     /**
      * @ORM\ManyToMany(targetEntity="User", mappedBy="myFriends")
      */
-    private $friendsWithMe;
+    protected $friendsWithMe;
 
     /**
      * @ORM\ManyToMany(targetEntity="User", inversedBy="friendsWithMe")
@@ -45,7 +45,7 @@ class User extends BaseUser
      *      inverseJoinColumns={@ORM\JoinColumn(name="friend_user_id", referencedColumnName="id")}
      *      )
      */
-    private $myFriends;
+    protected $myFriends;
 
     /**
      * @ORM\ManyToMany(targetEntity="SerieBundle\Entity\Episode")
@@ -54,7 +54,7 @@ class User extends BaseUser
      *      inverseJoinColumns={@ORM\JoinColumn(name="episode_id", referencedColumnName="id")}
      *      )
      */
-    private $episodes;
+    protected $episodes;
 
     public function __construct()
     {
@@ -65,7 +65,7 @@ class User extends BaseUser
     /**
      * Set birthDate
      *
-     * @param \DateTime $birthDate
+     * @param date $birthDate
      * @return User
      */
     public function setBirthDate($birthDate)

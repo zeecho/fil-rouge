@@ -30,7 +30,12 @@ class EpisodeType extends AbstractType
                     return $string;
                 }
             ])
-            ->add('guests')
+            ->add('guests', EntityType::class, [
+                'class' => 'SerieBundle:Person',
+                'choice_label' => 'lastAndFirstName',
+                'multiple' => true,
+                'required' => false
+            ])
         ;
     }
     
