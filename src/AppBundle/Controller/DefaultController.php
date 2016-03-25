@@ -13,12 +13,10 @@ class DefaultController extends Controller
      */
     public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $series = $em->getRepository('SerieBundle:Serie')->findAll();
-
+        
+        // replace this example code with whatever you need
         return $this->render('serie/index.html.twig', array(
-            'series' => $series,
+            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..')
         ));
     }
 }
