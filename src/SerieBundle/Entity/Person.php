@@ -235,4 +235,16 @@ class Person
     {
         return $this->appearances;
     }
+
+
+    public function setName($chaine){
+        $chaine = preg_split("/[\s]/", $chaine);
+        $this->setFirstName($chaine[0]);
+        $this->setLastName($chaine[1]);
+        return $this;
+    }
+
+    public function getName(){
+        return $this->getFirstName() . ' ' . $this->getLastName();
+    }
 }
