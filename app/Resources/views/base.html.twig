@@ -31,44 +31,47 @@
         <header>
             <div class="container">
                 <div class="jumbotron">
-                    <div>
+                    <div class="langue">Choix de la langue:
                         <select name="lang">
                             <option value="fr">FR</option>
                             <option value="en">EN</option>
                         </select>
                     </div>                
-                    <h1>DukooTV</h1>
                 </div>  
-                <div class="row">
+                <div class="row">      
+                    <ul class="col-sm-2">
+                        <li><h1>DukooTV</h1></li>
+                    </ul>
+                    <ul class="col-sm-10">
+						{% if app.user %}
+							<li>Connecté en tant que <a href="/account">{{ app.user }}</a></li>
+							<li><a href="/logout">Se déconnecter</a></li>
+						{% else %}
+							<li><a href="/login">Se connecter</a></li>
+							<li><a href="/register">S'enregistrer</a></li>
+						{% endif %}
+                    </ul>
+                </div>
                     <nav>
-                        <ul class="col-sm-4">
-                            {% if app.user %}
-                                <li>Connecté en tant que <a href="/account">{{ app.user }}</a></li>
-                                <li><a href="/logout">Se déconnecter</a></li>
-                            {% else %}
-                                <li><a href="/login">Se connecter</a></li>
-                                <li><a href="/register">S'enregistrer</a></li>
-                            {% endif %}
-                        </ul>
-                        <ul class="col-sm-8">
                             <li><a href="/">Accueil</a></li>
-                            <li><a href="/community">Communauté</a></li>
+                            <li><a href="/community">Forum</a></li>
                             <li><a href="/ranking">Classements</a></li>
                             <li><a href="/account">Mon Compte</a></li>
                         </ul> 
                     </nav>
-                </div>
             </div>
         <div class="container">
             <input type="text" placeholder="Rechercher une série"></input>
             <input type="submit" value="">
         </div>
         </header>
-        <div class="container">
-            <div class="jumbotron">
-                {% block body %}{% endblock %}
-                {% block javascripts %}{% endblock %}
+        <main>
+            <div class="container">
+                <div class="jumbotron">
+                    {% block body %}{% endblock %}
+                    {% block javascripts %}{% endblock %}
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
