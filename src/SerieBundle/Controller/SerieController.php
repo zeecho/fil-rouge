@@ -69,8 +69,14 @@ class SerieController extends Controller
     {
         $deleteForm = $this->createDeleteForm($serie);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $seasonRepo = $em->getRepository('SerieBundle:Season');
+        $seasons = $seasonRepo->findBySerie($serie);
+
         return $this->render('serie/show.html.twig', array(
             'serie' => $serie,
+            'seasons' => $seasons,
             'delete_form' => $deleteForm->createView(),
         ));
     }
