@@ -1,21 +1,36 @@
-#langID {
-	margin-top: 0em;
+.langue {
+	text-align: right;
+	margin-right: 50%;
+	color: red;
+}
+
+div	select {
+	position: absolute;
+	top: 0;
+	color: black;
 }
 
 .jumbotron {
 	background-color: #f3f2f1;
+	padding: 0;
 }
 
 body {
-		background-color: #f3f2f1;
+	background-color: #f3f2f1;
 }
 
 nav ul li {
 	display: inline;
-	margin-right: 2em;
+	margin: auto;
+	background-color: darkgrey;
+	color: white;
 }
 
-a {
+/* .col-sm-4 {
+	margin: auto;
+} */
 
-	color: black;
-}
+/* .row {
+	display: inline;
+	margin: auto;
+} */
