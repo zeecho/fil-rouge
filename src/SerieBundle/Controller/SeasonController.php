@@ -69,8 +69,14 @@ class SeasonController extends Controller
     {
         $deleteForm = $this->createDeleteForm($season);
 
+        $em = $this->getDoctrine()->getManager();
+
+        $episodeRepo = $em->getRepository('SerieBundle:Episode');
+        $episodes = $episodeRepo->findBySeason($season);
+
         return $this->render('season/show.html.twig', array(
             'season' => $season,
+            'episodes' => $episodes,
             'delete_form' => $deleteForm->createView(),
         ));
     }

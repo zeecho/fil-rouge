@@ -1,11 +1,18 @@
-body{
-	background-color: #F3F2F0;
+.jumbotron{
+	background-color: #f3f2f1;
 }
 
-#mgauche{
 
+body {
+	background-color: #f3f2f1;
 }
 
-#mdroite{
+nav ul li {
+	display: inline;
+	margin-right: 2em;
+}
 
+a {
+
+	color: black;
 }

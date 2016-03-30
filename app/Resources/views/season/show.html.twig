@@ -1,32 +1,18 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Season</h1>
+    <h2><a href="{{ path('serie_show', { id: season.serie.id }) }}">{{ season.serie.name }}</a></h2>
+    <h3>Saison {{ season.number }}</h3>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ season.id }}</td>
-            </tr>
-            <tr>
-                <th>Number</th>
-                <td>{{ season.number }}</td>
-            </tr>
-        </tbody>
-    </table>
-
+    <h4>Liste des épisodes</h4>
     <ul>
-        <li>
-            <a href="{{ path('season_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('season_edit', { 'id': season.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
+        {% for episode in episodes %}
+            <li><a href="{{ path('episode_show', { id: episode.id }) }}">{{ episode.name }}</a></li>
+        {% endfor %}
     </ul>
+
+    <a href="{{ path('season_edit', { 'id': season.id }) }}"><button class="btn">Éditer</button></a>
+    {{ form_start(delete_form) }}
+    <input type="submit" class="btn" value="Supprimer">
+    {{ form_end(delete_form) }}
 {% endblock %}
