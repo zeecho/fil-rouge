@@ -42,8 +42,13 @@
                 <div class="row">
                     <nav>
                         <ul class="col-sm-4">
-                            <li><a href="/login">Se connecter</a></li>
-                            <li><a href="/register">S'enregistrer</a></li>
+                            {% if app.user %}
+                                <li>Connecté en tant que <a href="/account">{{ app.user }}</a></li>
+                                <li><a href="/logout">Se déconnecter</a></li>
+                            {% else %}
+                                <li><a href="/login">Se connecter</a></li>
+                                <li><a href="/register">S'enregistrer</a></li>
+                            {% endif %}
                         </ul>
                         <ul class="col-sm-8">
                             <li><a href="/">Accueil</a></li>
