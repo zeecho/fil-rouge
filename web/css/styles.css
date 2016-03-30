@@ -1,10 +1,13 @@
-.jumbotron{
+#langID {
+	margin-top: 0em;
+}
+
+.jumbotron {
 	background-color: #f3f2f1;
 }
 
-
 body {
-	background-color: #f3f2f1;
+		background-color: #f3f2f1;
 }
 
 nav ul li {

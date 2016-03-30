@@ -31,7 +31,7 @@
         <header>
             <div class="container">
                 <div class="jumbotron">
-                    <div>
+                    <div id="langID">
                         <select name="lang">
                             <option value="fr">FR</option>
                             <option value="en">EN</option>
@@ -59,11 +59,13 @@
             <input type="submit" value="">
         </div>
         </header>
-        <div class="container">
-            <div class="jumbotron">
-                {% block body %}{% endblock %}
-                {% block javascripts %}{% endblock %}
+        <main>
+            <div class="container">
+                <div class="jumbotron">
+                    {% block body %}{% endblock %}
+                    {% block javascripts %}{% endblock %}
+                </div>
             </div>
-        </div>
+        </main>
     </body>
 </html>
