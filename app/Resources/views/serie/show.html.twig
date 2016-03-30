@@ -31,10 +31,8 @@
         <li><a href="{{ path('season_show', { id: season.id }) }}">Saison {{ season.number }}</a></li>
         {% endfor %}
     </ul>
-
-            <a href="{{ path('serie_index') }}">Retour à la liste</a>
-            <a href="{{ path('serie_edit', { 'id': serie.id }) }}">Éditer</a>
+            <a href="{{ path('serie_edit', { 'id': serie.id }) }}"><button class="btn">Éditer</button></a>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Supprimer">
+                <input type="submit" class="btn" value="Supprimer">
             {{ form_end(delete_form) }}
 {% endblock %}
