@@ -38,21 +38,20 @@
                         </select>
                     </div>                
                 </div>  
-                <div class="row">      
-                    <ul class="col-sm-2">
-                        <li><h1>DukooTV</h1></li>
-                    </ul>
-                    <ul class="col-sm-10">
-						{% if app.user %}
-							<li>Connecté en tant que <a href="/account">{{ app.user }}</a></li>
-							<li><a href="/logout">Se déconnecter</a></li>
-						{% else %}
-							<li><a href="/login">Se connecter</a></li>
-							<li><a href="/register">S'enregistrer</a></li>
-						{% endif %}
+                <div class="row">
+                    <h1 class="col-sm-8">DukooTV</h1>
+                    <ul class="col-sm-4">
+                        {% if app.user %}
+                            <li>Connecté en tant que <a href="/account">{{ app.user }}</a></li>
+                            <li><a href="/logout">Se déconnecter</a></li>
+                        {% else %}
+                            <li><a href="/login">Se connecter</a></li>
+                            <li><a href="/register">S'enregistrer</a></li>
+                        {% endif %}
                     </ul>
                 </div>
                     <nav>
+                        <ul>
                             <li><a href="/">Accueil</a></li>
                             <li><a href="/community">Forum</a></li>
                             <li><a href="/ranking">Classements</a></li>
