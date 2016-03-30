@@ -6,7 +6,7 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
-<!--         <link rel="stylesheet" href="{{ asset('css/styles.css') }}" /> -->
+        <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
         <script>
@@ -31,20 +31,26 @@
         <header>
             <div class="container">
                 <div class="jumbotron">
+                    <div>
+                        <select name="lang">
+                            <option value="fr">FR</option>
+                            <option value="en">EN</option>
+                        </select>
+                    </div>                
                     <h1>DukooTV</h1>
                 </div>  
                 <div class="row">
                     <nav>
-                        <div class="col-sm-4">
-                            <td><a href="/login">Se connecter</a></td>
-                            <td><a href="/register">S'enregistrer</a></td>
-                        </div>
-                        <div class="col-sm-4">
-                            <td><a href="/">Accueil</a></td>
-                            <td><a href="/community">Communauté</a></td>
-                            <td><a href="/ranking">Classements</a></td>
-                            <td><a href="/account">Mon Compte</a></td>
-                        </div> 
+                        <ul class="col-sm-4">
+                            <li><a href="/login">Se connecter</a></li>
+                            <li><a href="/register">S'enregistrer</a></li>
+                        </ul>
+                        <ul class="col-sm-8">
+                            <li><a href="/">Accueil</a></li>
+                            <li><a href="/community">Communauté</a></li>
+                            <li><a href="/ranking">Classements</a></li>
+                            <li><a href="/account">Mon Compte</a></li>
+                        </ul> 
                     </nav>
                 </div>
             </div>
