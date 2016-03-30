@@ -6,44 +6,23 @@
 
     <table>
         <tbody>
-            <tr>
-                <th>Résumé</th>
-                <td>{{ episode.synopsis }}</td>
-            </tr>
-            <tr>
-                <th>Date de diffusion</th>
-                <td>{% if episode.runtime %}{{ episode.runtime|date('H:i:s') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Serie</th>
-                <td>{{ episode.season.serie.name }}</td>
-            </tr>
-            <tr>
-                <th>Season</th>
-                <td>{{ episode.season.number }}</td>
-            </tr>
-            <tr>
-                <th>Number</th>
-                <td>{{ episode.number }}</td>
-            </tr>
-            <tr>
-                <th>Aireddate</th>
-                <td>{{ episode.airedDate|date('d-m-Y') }}</td>
-            </tr>
+        <tr>
+            <th>Résumé</th>
+            <td>{{ episode.synopsis }}</td>
+        </tr>
+        <tr>
+            <th>Date de diffusion</th>
+            <td>{{ episode.airedDate|date('d-m-Y') }}</td>
+        </tr>
+        <tr>
+            <th>Heure de diffusion</th>
+            <td>{% if episode.runtime %}{{ episode.runtime|date('H:i:s') }}{% endif %}</td>
+        </tr>
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('episode_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('episode_edit', { 'id': episode.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a href="{{ path('episode_edit', { 'id': episode.id }) }}"><button class="btn">Éditer</button></a>
+    {{ form_start(delete_form) }}
+    <input type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
 {% endblock %}
