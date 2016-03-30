@@ -1,8 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1><a href="{{ path('serie_show', { id: season.serie.id }) }}">{{ season.serie.name }}</a></h1>
-    <h2>Saison {{ season.number }}</h2>
+    <h2><a href="{{ path('serie_show', { id: season.serie.id }) }}">{{ season.serie.name }}</a></h2>
+    <h3>Saison {{ season.number }}</h3>
 
     <h4>Liste des épisodes</h4>
     <ul>
@@ -11,8 +11,8 @@
         {% endfor %}
     </ul>
 
-    <a href="{{ path('season_edit', { 'id': season.id }) }}">Edit</a>
+    <a href="{{ path('season_edit', { 'id': season.id }) }}"><button class="btn">Éditer</button></a>
     {{ form_start(delete_form) }}
-    <input type="submit" class="btn" value="Delete">
+    <input type="submit" class="btn" value="Supprimer">
     {{ form_end(delete_form) }}
 {% endblock %}
