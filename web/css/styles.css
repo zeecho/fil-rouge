@@ -8,28 +8,29 @@ div	select {
 	color: black;
 }
 
-nav ul {
-	text-align: center;
-	background-color: #a2a1a1;
-
-}
-
 nav ul li{
 	display: inline;
 	margin: 5em;
 }
 
-nav a:link, nav a:visited {
-	  background-color: #a2a1a1;
-    color: white;
-    padding: 14px 25px;
-    text-align: center;	
-    text-decoration: none;
-    display: inline-block;
+nav ul {
+	text-align: center;
+	background-color: #555555;
 }
 
-nav a:hover, nav a:active{
+nav a:link, nav a:visited {
+  background-color: #555555;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;	
+  text-decoration: none;
+  display: inline-block;
+  transition: 0.7s;
+}
+
+nav a:hover, nav a:active {
 	background-color: red;
+	transition: 0.2s;
 }
 
 .jumbotron {
