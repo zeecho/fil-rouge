@@ -50,7 +50,7 @@ nav a:hover, nav a:active{
 }
 
 .away {
-	margin: 5px;
+	margin: 1em;
 }
 
 li {
@@ -63,7 +63,7 @@ li {
 
 .navigation li {
 	display: inline;
-	background: beige;
+	background: #f3f2f0;
 	margin: 0.5em;
 }
 
@@ -102,8 +102,8 @@ $lines-to-show: 3;
 	margin-top: -5px;
 }
 
-i {
-	padding-right: 10px;
+.fa {
+	font-size: 1.5em;
 }
 
 .red {
@@ -113,4 +113,9 @@ i {
 .imgHome {
 	width: 100%;
 	height: 100%;
+}
+
+.allSeries {
+	background: white;
+	padding: 1em;
 }

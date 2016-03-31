@@ -5,37 +5,39 @@
         <a href="{{ path('serie_new') }}"><button class="btn btn-primary away">Créer une nouvelle série</button></a>
     {% endif %}
 
-    {% for serie in series %}
-        <div class="container singleSerie">
-            <div class="container">
-                <div class="col-sm-5"><a href="{{ path('serie_show', { 'id': serie.id }) }}"><h3 class="serieName">{{ serie.name }}</h3></a></div>
-                <div class="col-sm-6">
-                    <ul class="navigation">
-                        <li>Tous les avis</li>
-                        <li>Forum sur la série</li>
-                        <li>Ajouter à mes séries</li>
-                    </ul>
+    <div class="allSeries">
+        {% for serie in series %}
+            <div class="container singleSerie">
+                <div class="container">
+                    <div class="col-sm-5"><a href="{{ path('serie_show', { 'id': serie.id }) }}"><h3 class="serieName">{{ serie.name }}</h3></a></div>
+                    <div class="col-sm-6">
+                        <ul class="navigation">
+                            <li>Tous les avis</li>
+                            <li>Forum sur la série</li>
+                            <li>Ajouter à mes séries</li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-1">
+                        <a href="{{ path('serie_edit', { 'id': serie.id }) }}"><i class="fa fa-pencil"></i></a>
+                        <a href="{{ path('serie_delete', { 'id': serie.id }) }}"><i class="fa fa-trash red"></i></a>
+                    </div>
                 </div>
-                <div class="col-sm-1">
-                    <a href="{{ path('serie_edit', { 'id': serie.id }) }}"><i class="fa fa-pencil"></i></a>
-                    <a href="{{ path('serie_delete', { 'id': serie.id }) }}"><i class="fa fa-trash red"></i></a>
-                </div>
-            </div>
 
-            <div class="container">
-                <div class="col-sm-2">
-                    {% if serie.poster %}
-                        {{ serie.poster }}
-                    {% else %}
-                        <img src="{{ asset('img/breaking bad2.jpg') }}" alt="{{ serie.name }}" class="imgHome">
-                    {% endif %}
-                </div>
-                <div class="col-sm-10 overflow">
-                    {{ serie.summary }}
+                <div class="container">
+                    <div class="col-sm-2">
+                        {% if serie.poster %}
+                            {{ serie.poster }}
+                        {% else %}
+                            <img src="{{ asset('img/breaking bad2.jpg') }}" alt="{{ serie.name }}" class="imgHome">
+                        {% endif %}
+                    </div>
+                    <div class="col-sm-10 overflow">
+                        {{ serie.summary }}
+                    </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 
     {#<table>#}
         {#<tbody>#}
