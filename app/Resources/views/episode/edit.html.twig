@@ -5,17 +5,11 @@
 
     {{ form_start(edit_form) }}
         {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    {% include ':buttons:edit.html.twig' %}
     {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('episode_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <a href="{{ path('episode_show', { id: episode.id }) }}"><button class="btn btn-default">Annuler</button></a>
+    {{ form_start(delete_form) }}
+        <input class="btn btn-default" type="submit" value="Supprimer">
+    {{ form_end(delete_form) }}
 {% endblock %}

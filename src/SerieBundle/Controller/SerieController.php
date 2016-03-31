@@ -98,7 +98,7 @@ class SerieController extends Controller
             $em->persist($serie);
             $em->flush();
 
-            return $this->redirectToRoute('serie_edit', array('id' => $serie->getId()));
+            return $this->redirectToRoute('serie_index', array('id' => $serie->getId()));
         }
 
         return $this->render('serie/edit.html.twig', array(

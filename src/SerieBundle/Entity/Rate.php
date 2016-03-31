@@ -48,6 +48,10 @@ class Rate
      */
     private $user;
 
+    public function __construct() {
+        $this->setPublishedAt(new DateTime());
+    }
+
     /**
      * Get id
      *
