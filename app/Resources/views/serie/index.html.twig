@@ -37,26 +37,4 @@
         {% endfor %}
     </div>
 
-    {#<table>#}
-        {#<tbody>#}
-        {#{% for serie in series %}#}
-            {#<tr class="seriesList">#}
-                {#<td><a href="{{ path('serie_show', { 'id': serie.id }) }}">{{ serie.name }}</a></td>#}
-                {#<td>#}
-                    {#{% if serie.poster %}#}
-                        {#{{ serie.poster }}#}
-                    {#{% endif %}#}
-                {#</td>#}
-                {#<td>#}
-                    {#{% if app.user %}#}
-                        {#<a href="{{ path('serie_edit', { 'id': serie.id }) }}"><i class="fa fa-pencil"></i></a>#}
-                        {#<a href="{{ path('serie_delete', { 'id': serie.id }) }}"><i class="fa fa-trash"></i></a>#}
-                    {#{% endif %}#}
-
-                {#</td>#}
-            {#</tr>#}
-        {#{% endfor %}#}
-        {#</tbody>#}
-    {#</table>#}
-
 {% endblock %}
