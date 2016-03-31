@@ -26,13 +26,13 @@
                 <div class="container">
                     <div class="col-sm-2">
                         {% if serie.poster %}
-                            {{ serie.poster }}
+                            <a href="{{ path('serie_show', { 'id': serie.id }) }}">{{ serie.poster }}</a>
                         {% else %}
-                            <img src="{{ asset('img/breaking bad2.jpg') }}" alt="{{ serie.name }}" class="imgHome">
+                            <a href="{{ path('serie_show', { 'id': serie.id }) }}"><img src="{{ asset('img/breaking bad2.jpg') }}" alt="{{ serie.name }}" class="imgHome"></a>
                         {% endif %}
                     </div>
                     <div class="col-sm-10 overflow">
-                        {{ serie.summary }}
+                        {{ serie.tinySum }} <a href="{{ path('serie_show', { 'id': serie.id }) }}">Lire la suite</a>
                     </div>
                 </div>
             </div>

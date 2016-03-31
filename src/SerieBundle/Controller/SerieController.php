@@ -28,8 +28,13 @@ class SerieController extends Controller
 
         $series = $em->getRepository('SerieBundle:Serie')->findAll();
 
+        $summaries = [];
+        foreach ($series as $serie) {
+            $serie->tinySum = substr($serie->getSummary(), 0, 300) . "…";
+        }
+
         return $this->render('serie/index.html.twig', array(
-            'series' => $series,
+            'series' => $series
         ));
     }
 
