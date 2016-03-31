@@ -12,3 +12,5 @@
 /composer.phar
 .idea
 .*.sw*
+/web/presentation/node_modules/
+/web/presentation/bower_components/
