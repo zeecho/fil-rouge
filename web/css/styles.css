@@ -1,5 +1,6 @@
 body {
 	background-color: #f3f2f1;
+	text-align: justify;
 }
 
 div	select {
@@ -20,7 +21,7 @@ nav ul {
 }
 
 nav a:link, nav a:visited {
-	  background-color: #a2a1a1;
+	background-color: #a2a1a1;
     color: white;
     padding: 14px 25px;
     text-align: center;	
@@ -39,6 +40,77 @@ nav a:hover, nav a:active{
 
 .langue {
 	text-align: right;
-	margin-right: 50%;
+	margin: auto;
 	color: red;
+}
+
+.seriesList td {
+	padding-right: 7px;
+	font-size: 1.4em;
+}
+
+.away {
+	margin: 5px;
+}
+
+li {
+	list-style: none;
+}
+
+.navigation {
+
+}
+
+.navigation li {
+	display: inline;
+	background: beige;
+	margin: 0.5em;
+}
+
+/*.overflow {*/
+	/*text-overflow: ellipsis;*/
+	/*white-space: normal;*/
+	/*overflow: hidden;*/
+/*}*/
+
+
+$font-size: 10px;
+$line-height: 1.4;
+$lines-to-show: 3;
+
+.overflow {
+	display: block; /* Fallback for non-webkit */
+	display: -webkit-box;
+	max-width: 400px;
+	height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
+	margin: 0 auto;
+	font-size: $font-size;
+	line-height: $line-height;
+	-webkit-line-clamp: $lines-to-show;
+	-webkit-box-orient: vertical;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.singleSerie {
+	margin: 2em;
+	margin-bottom: 5em;
+}
+
+.serieName {
+	font-size: 2em;
+	margin-top: -5px;
+}
+
+i {
+	padding-right: 10px;
+}
+
+.red {
+	color: red;
+}
+
+.imgHome {
+	width: 100%;
+	height: 100%;
 }

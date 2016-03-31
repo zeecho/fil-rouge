@@ -11,8 +11,8 @@
         {% endfor %}
     </ul>
 
-    <a href="{{ path('season_edit', { 'id': season.id }) }}"><button class="btn">Éditer</button></a>
+    <a href="{{ path('season_edit', { 'id': season.id }) }}"><button class="btn btn-default">Éditer</button></a>
     {{ form_start(delete_form) }}
-    <input type="submit" class="btn" value="Supprimer">
+    <input class="btn btn-default" type="submit" value="Supprimer">
     {{ form_end(delete_form) }}
 {% endblock %}

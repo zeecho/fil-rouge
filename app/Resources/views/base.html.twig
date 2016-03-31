@@ -6,6 +6,7 @@
         {% block stylesheets %}{% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="{{ asset('css/styles.css') }}" />
         <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
         <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
@@ -31,8 +32,8 @@
         <header>
             <div class="container">
                 <div class="jumbotron">
-                    <div class="langue">Choix de la langue:
-                        <select name="lang">
+                    <div class="langue form-inline">
+                        <select name="lang" class="form-control">
                             <option value="fr">FR</option>
                             <option value="en">EN</option>
                         </select>
@@ -59,9 +60,9 @@
                         </ul> 
                     </nav>
             </div>
-        <div class="container">
-            <input type="text" placeholder="Rechercher une série"></input>
-            <input type="submit" value="">
+        <div class="container form-inline">
+            <input class="form-control" type="text" placeholder="Rechercher une série"></input>
+            <button class="btn btn-info"><i class="fa fa-search"></i></button>
         </div>
         </header>
         <main>
