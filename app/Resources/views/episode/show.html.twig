@@ -22,7 +22,5 @@
     </table>
 
     <a href="{{ path('episode_edit', { 'id': episode.id }) }}"><button class="btn btn-default">Éditer</button></a>
-    {{ form_start(delete_form) }}
-    <input class="btn btn-default" type="submit" value="Supprimer">
-    {{ form_end(delete_form) }}
+    {% include ':form_parts:delete.html.twig' %}
 {% endblock %}

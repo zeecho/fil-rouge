@@ -4,12 +4,17 @@
     <h1>Episode edit</h1>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-    {% include ':buttons:edit.html.twig' %}
+        {#{{ form_widget(edit_form) }}#}
+        {{ form_row(edit_form.number, {'label': 'Numéro de l\'épisode', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.name, {'label': 'Titre', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.season, {'label': 'Saison', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.synopsis, {'label': 'Synopsis', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.airedDate, {'label': 'Date de diffusion', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.guests, {'label': 'Guests', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(edit_form.runtime, {'label': 'Durée', 'attr': {'class': 'form-control'}}) }}
+        {% include ':buttons:edit.html.twig' %}
     {{ form_end(edit_form) }}
 
     <a href="{{ path('episode_show', { id: episode.id }) }}"><button class="btn btn-default">Annuler</button></a>
-    {{ form_start(delete_form) }}
-        <input class="btn btn-default" type="submit" value="Supprimer">
-    {{ form_end(delete_form) }}
+    {% include ':form_parts:delete.html.twig' %}
 {% endblock %}

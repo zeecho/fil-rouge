@@ -17,6 +17,6 @@
         {% include ':buttons:edit.html.twig' %}
     {{ form_end(edit_form) }}
 
-    <a href="{{ path('serie_index') }}"><button class="btn btn-info">Retour à la liste des séries</button></a>
+    <a href="{{ path('serie_show', { id: serie.id }) }}"><button class="btn btn-default">Annuler</button></a>
     {% include ':form_parts:delete.html.twig' %}
 {% endblock %}

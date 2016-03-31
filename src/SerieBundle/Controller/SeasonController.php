@@ -98,7 +98,7 @@ class SeasonController extends Controller
             $em->persist($season);
             $em->flush();
 
-            return $this->redirectToRoute('season_edit', array('id' => $season->getId()));
+            return $this->redirectToRoute('season_show', array('id' => $season->getId()));
         }
 
         return $this->render('season/edit.html.twig', array(

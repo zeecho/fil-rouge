@@ -4,13 +4,17 @@
     <h1>Serie creation</h1>
 
     {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        {{ form_row(form.name, {'label': 'Nom de la série', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.summary, {'label': 'Résumé', 'attr': {'class': 'form-control', 'rows': '4'}}) }}
+        {{ form_row(form.poster, {'label': 'Affiche', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.releaseDate, {'label': 'Date de diffusion', 'attr': {'class': 'form-group'}}) }}
+        {{ form_row(form.genres, {'label': 'Genre', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.countries, {'label': 'Pays d\'origine', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.language, {'label': 'Langue originale', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.casting, {'label': 'Acteurs', 'attr': {'class': 'form-control'}}) }}
+        {{ form_row(form.directors, {'label': 'Réalisateurs', 'attr': {'class': 'form-control'}}) }}
+        {% include ':buttons:create.html.twig' %}
     {{ form_end(form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('serie_index') }}">Back to the list</a>
-        </li>
-    </ul>
+    <a href="{{ path('serie_index') }}"><button class="btn btn-default">Annuler</button></a>
 {% endblock %}
