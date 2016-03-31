@@ -2,37 +2,31 @@
 {% block title %}DukooTV - {{ serie.name }}{% endblock %}
 
 {% block body %}
-    <h2>{{ serie.name }}</h2>
+    <div class="mainContainer">
+        <h2>{{ serie.name }}</h2>
 
-    {% if serie.poster %}
-        <img src="{{ serie.poster }}" />
-    {% endif %}
+        <div class="container">
+            {% if serie.poster %}
+                <img class="center" src="{{ asset('img/') ~ serie.getPoster() }}" alt="{{ serie.name }}">
+            {% endif %}
+        </div>
+        <p>{{ serie.summary }}</p>
 
-    <table>
-        <tbody>
-        <tr>
-                <th>Résumé</th>
-                <td>{{ serie.summary }}</td>
-            </tr>
-            <tr>
-                <th>Date de sortie</th>
-                <td>{% if serie.releaseDate %}{{ serie.releaseDate|date('Y-m-d') }}{% else %}Inconnue{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Langue originale</th>
-                <td>{{ serie.language.name }}</td>
-            </tr>
-        </tbody>
-    </table>
+        <h3>Date de sortie</h3>
+            <p>{% if serie.releaseDate %}{{ serie.releaseDate|date('Y-m-d') }}{% else %}Inconnue{% endif %}</p>
 
-    <h3>Voir les épisodes par saison</h3>
-    <ul>
-        {% for season in seasons %}
-        <li><a href="{{ path('season_show', { id: season.id }) }}">Saison {{ season.number }}</a></li>
-        {% endfor %}
-    </ul>
-            <a href="{{ path('serie_edit', { 'id': serie.id }) }}"><button class="btn btn-default">Éditer</button></a>
-            {{ form_start(delete_form) }}
-                <input type="submit" class="btn btn-default" value="Supprimer">
-            {{ form_end(delete_form) }}
+        <h3>Langue originale</h3>
+                <p>{{ serie.language.name }}</p>
+
+        <h3>Voir les épisodes par saison</h3>
+        <ul>
+            {% for season in seasons %}
+                <li><a href="{{ path('season_show', { id: season.id }) }}">Saison {{ season.number }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{{ path('serie_edit', { 'id': serie.id }) }}"><button class="btn btn-default">Éditer</button></a>
+        {{ form_start(delete_form) }}
+        <input type="submit" class="btn btn-default" value="Supprimer">
+        {{ form_end(delete_form) }}
+    </div>
 {% endblock %}

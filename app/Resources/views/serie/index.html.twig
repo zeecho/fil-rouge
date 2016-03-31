@@ -5,7 +5,7 @@
         <a href="{{ path('serie_new') }}"><button class="btn btn-primary away">Créer une nouvelle série</button></a>
     {% endif %}
 
-    <div class="allSeries">
+    <div class="mainContainer">
         {% for serie in series %}
             <div class="container singleSerie">
                 <div class="container">
@@ -26,9 +26,7 @@
                 <div class="container">
                     <div class="col-sm-2">
                         {% if serie.poster %}
-                            <a href="{{ path('serie_show', { 'id': serie.id }) }}">{{ serie.poster }}</a>
-                        {% else %}
-                            <a href="{{ path('serie_show', { 'id': serie.id }) }}"><img src="{{ asset('img/breaking bad2.jpg') }}" alt="{{ serie.name }}" class="imgHome"></a>
+                            <a href="{{ path('serie_show', { 'id': serie.id }) }}"><img src="{{ asset('img/') ~ serie.getPoster() }}" alt="{{ serie.name }}" class="imgHome"></a>
                         {% endif %}
                     </div>
                     <div class="col-sm-10 overflow">

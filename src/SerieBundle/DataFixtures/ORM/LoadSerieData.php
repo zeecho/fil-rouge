@@ -178,9 +178,7 @@ class LoadUserData implements FixtureInterface
             $rate->setValue($series[$i][7]);
             $rate->setUser($user);
 
-            // $poster = new Poster();
-            // $poster->setSerie($serie);
-            
+            $serie->setPoster($series[$i][9]);
 
             $manager->flush();
         }
