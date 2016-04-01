@@ -31,6 +31,7 @@ php app/console server:run
 ## For presentation
 
 ```
+cd web/presentation
 npm install
 bower install
 ```
